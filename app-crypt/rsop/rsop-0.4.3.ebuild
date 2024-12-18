@@ -1,0 +1,312 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.0
+	aead@0.5.2
+	aes-gcm@0.10.3
+	aes-kw@0.2.1
+	aes@0.8.4
+	aho-corasick@1.1.3
+	android-tzdata@0.1.1
+	android_system_properties@0.1.5
+	anstream@0.6.18
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.6
+	anstyle@1.0.10
+	anyhow@1.0.93
+	argon2@0.5.3
+	autocfg@1.4.0
+	base16ct@0.2.0
+	base64@0.21.7
+	base64ct@1.6.0
+	bitfield@0.14.0
+	bitflags@1.3.2
+	bitflags@2.6.0
+	blake2@0.10.6
+	block-buffer@0.10.4
+	block-padding@0.3.3
+	blowfish@0.9.1
+	bstr@1.11.0
+	buffer-redux@1.0.2
+	bumpalo@3.16.0
+	byteorder@1.5.0
+	camellia@0.1.0
+	card-backend-pcsc@0.5.0
+	card-backend@0.2.0
+	cast5@0.11.1
+	cc@1.2.1
+	cfb-mode@0.8.2
+	cfg-if@1.0.0
+	chrono@0.4.38
+	cipher@0.4.4
+	clap@4.5.21
+	clap_builder@4.5.21
+	clap_complete@4.5.38
+	clap_derive@4.5.18
+	clap_lex@0.7.3
+	clap_mangen@0.2.24
+	cmac@0.7.2
+	colorchoice@1.0.3
+	confy@0.6.1
+	const-oid@0.9.6
+	core-foundation-sys@0.8.7
+	core-foundation@0.10.0
+	core-foundation@0.9.4
+	cpufeatures@0.2.16
+	crc24@0.1.6
+	crc32fast@1.4.2
+	crypto-bigint@0.5.5
+	crypto-common@0.1.6
+	ctr@0.9.2
+	curve25519-dalek-derive@0.1.1
+	curve25519-dalek@4.1.3
+	darling@0.20.10
+	darling_core@0.20.10
+	darling_macro@0.20.10
+	dbl@0.3.2
+	dbus-secret-service@4.0.3
+	dbus@0.9.7
+	der@0.7.9
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	derive_more-impl@1.0.0
+	derive_more@1.0.0
+	des@0.8.1
+	digest@0.10.7
+	directories@5.0.1
+	dirs-sys@0.4.1
+	dsa@0.6.3
+	eax@0.5.0
+	ecdsa@0.16.9
+	ed25519-dalek@2.1.1
+	ed25519@2.2.3
+	ed448-goldilocks@0.7.2
+	elliptic-curve@0.13.8
+	env_filter@0.1.2
+	env_logger@0.11.5
+	equivalent@1.0.1
+	errno@0.3.9
+	ff@0.13.0
+	fiat-crypto@0.1.20
+	fiat-crypto@0.2.9
+	flate2@1.0.35
+	fnv@1.0.7
+	futures-core@0.3.31
+	futures-macro@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	generic-array@0.14.7
+	getrandom@0.2.15
+	ghash@0.5.1
+	group@0.13.0
+	hashbrown@0.15.2
+	heck@0.5.0
+	hex-slice@0.1.4
+	hex@0.4.3
+	hkdf@0.12.4
+	hmac@0.12.1
+	humantime@2.1.0
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.61
+	idea@0.5.1
+	ident_case@1.0.1
+	indexmap@2.6.0
+	inout@0.1.3
+	is_terminal_polyfill@1.70.1
+	iso7816-tlv@0.4.4
+	iter-read@1.1.0
+	itoa@1.0.14
+	js-sys@0.3.72
+	k256@0.13.4
+	keccak@0.1.5
+	keyring@3.6.1
+	lazy_static@1.5.0
+	libc@0.2.166
+	libdbus-sys@0.2.5
+	libm@0.2.11
+	libredox@0.1.3
+	linux-raw-sys@0.4.14
+	log@0.4.22
+	md-5@0.10.6
+	memchr@2.7.4
+	memsec@0.7.0
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.0
+	nom@7.1.3
+	num-bigint-dig@0.8.4
+	num-bigint@0.4.6
+	num-complex@0.4.6
+	num-integer@0.1.46
+	num-iter@0.1.45
+	num-rational@0.4.2
+	num-traits@0.2.19
+	num@0.4.3
+	num_enum@0.5.11
+	num_enum_derive@0.5.11
+	ocb3@0.1.0
+	once_cell@1.20.2
+	opaque-debug@0.3.1
+	openpgp-card-rpgp@0.2.0
+	openpgp-card-state@0.3.2
+	openpgp-card@0.5.0
+	option-ext@0.2.0
+	p256@0.13.2
+	p384@0.13.0
+	p521@0.13.3
+	password-hash@0.5.0
+	pcsc-sys@1.2.1
+	pcsc@2.8.2
+	pem-rfc7468@0.7.0
+	pgp@0.14.0
+	pin-project-lite@0.2.15
+	pin-utils@0.1.0
+	pkcs1@0.7.5
+	pkcs8@0.10.2
+	pkg-config@0.3.31
+	polyval@0.6.2
+	ppv-lite86@0.2.20
+	primeorder@0.13.6
+	proc-macro-crate@1.3.1
+	proc-macro2@1.0.92
+	quote@1.0.37
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.5.1
+	rand_core@0.6.4
+	redox_users@0.4.6
+	regex-automata@0.4.9
+	regex-syntax@0.8.5
+	regex@1.11.1
+	rfc6979@0.4.0
+	ripemd@0.1.3
+	roff@0.2.2
+	rpassword@7.3.1
+	rpgpie@0.2.0
+	rsa@0.9.7
+	rtoolbox@0.0.2
+	rustc_version@0.4.1
+	rustix@0.38.41
+	ryu@1.0.18
+	sec1@0.7.3
+	secrecy@0.8.0
+	security-framework-sys@2.12.1
+	security-framework@2.11.1
+	security-framework@3.0.1
+	semver@1.0.23
+	serde@1.0.215
+	serde_derive@1.0.215
+	serde_json@1.0.133
+	serde_spanned@0.6.8
+	sha1-checked@0.10.0
+	sha1@0.10.6
+	sha2@0.10.8
+	sha3@0.10.8
+	shlex@1.3.0
+	signature@2.2.0
+	slab@0.4.9
+	smallvec@1.13.2
+	sop@0.8.0
+	spin@0.9.8
+	spki@0.7.3
+	strsim@0.11.1
+	subtle@2.6.1
+	syn@1.0.109
+	syn@2.0.89
+	terminal_size@0.4.0
+	thiserror-impl@1.0.69
+	thiserror@1.0.69
+	toml@0.8.19
+	toml_datetime@0.6.8
+	toml_edit@0.19.15
+	toml_edit@0.22.22
+	twofish@0.7.1
+	typenum@1.17.0
+	unicode-ident@1.0.14
+	unicode-xid@0.2.6
+	universal-hash@0.5.1
+	untrusted@0.9.0
+	utf8parse@0.2.2
+	version_check@0.9.5
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-backend@0.2.95
+	wasm-bindgen-macro-support@0.2.95
+	wasm-bindgen-macro@0.2.95
+	wasm-bindgen-shared@0.2.95
+	wasm-bindgen@0.2.95
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-core@0.52.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	winnow@0.5.40
+	winnow@0.6.20
+	x25519-dalek@2.0.1
+	x448@0.6.0
+	zerocopy-derive@0.7.35
+	zerocopy@0.7.35
+	zeroize@1.8.1
+	zeroize_derive@1.4.2
+"
+
+inherit cargo
+
+DESCRIPTION="SOP CLI tool based on rpgp and rpgpie"
+HOMEPAGE="https://codeberg.org/heiko/rsop"
+SRC_URI="
+	https://codeberg.org/heiko/rsop/archive/rsop/v${PV}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="
+	CC0-1.0
+	|| ( Apache-2.0 MIT )
+"
+LICENSE+=" Apache-2.0 BSD ISC MIT MPL-2.0 Unicode-3.0"
+
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="cliv"
+
+DEPEND="
+	sys-apps/pcsc-lite
+"
+RDEPEND="${RDEPEND}"
+
+
+S="${WORKDIR}/${PN}"
+
+src_install() {
+	cargo_src_install --path ./rsop
+}
+
+src_configure() {
+	local myfeatures=(
+		$(usev cliv)
+	)
+
+	cargo_src_configure --no-default-features
+}
