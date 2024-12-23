@@ -1,0 +1,11 @@
+--- a/src/int/audio.cc
++++ b/src/int/audio.cc
+@@ -60,7 +60,7 @@
+ int audioOpen(const char* fname, int flags)
+ {
+     char path[80];
+-    snprintf(path, sizeof(path), fname);
++    snprintf(path, sizeof(path), "%s", fname);
+ 
+     int compression;
+     if (queryCompressedFunc(path)) {

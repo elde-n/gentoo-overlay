@@ -1,0 +1,11 @@
+--- a/cmake/Helpers.cmake
++++ b/cmake/Helpers.cmake
+@@ -67,7 +67,7 @@
+ 		# mark chars explicitly signed (ARM defaults to unsigned)
+ 		ADD_FLAG_IF_SUPPORTED(FLAG "-fsigned-char")
+ 		# only export symbols explicitly marked to be exported.
+-		ADD_FLAG_IF_SUPPORTED(FLAG "-fvisibility=hidden")
++		#ADD_FLAG_IF_SUPPORTED(FLAG "-fvisibility=hidden")
+ 		# Fast math helps us covering some things that need a little more rework soon
+ 		ADD_FLAG_IF_SUPPORTED(FLAG "-ffast-math")
+ 		ADD_FLAG_IF_SUPPORTED(FLAG "-frounding-math")

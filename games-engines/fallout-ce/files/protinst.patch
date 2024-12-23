@@ -1,0 +1,11 @@
+--- a/src/game/protinst.cc
++++ b/src/game/protinst.cc
+@@ -965,7 +965,7 @@
+ 
+     messageListItem.num = 582;
+     if (message_search(&proto_main_msg_file, &messageListItem)) {
+-        snprintf(formattedText, sizeof(formattedText), messageListItem.text);
++        snprintf(formattedText, sizeof(formattedText), "%s", messageListItem.text);
+         display_print(formattedText);
+     }
+     return -1;

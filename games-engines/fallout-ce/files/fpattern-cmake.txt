@@ -1,0 +1,12 @@
+add_library(fpattern STATIC
+    "debug.h"
+    "fpattern.c"
+    "fpattern.h"
+)
+
+target_compile_definitions(fpattern PRIVATE
+	"-Dunix"
+)
+
+set(FPATTERN_LIBRARY "fpattern" PARENT_SCOPE)
+set(FPATTERN_INCLUDE_DIR "third_party/fpattern" PARENT_SCOPE)
