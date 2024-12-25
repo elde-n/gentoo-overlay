@@ -117,7 +117,7 @@ inherit cargo
 DESCRIPTION="Drag and Drop files to and from the terminal"
 HOMEPAGE="https://github.com/nik012003/ripdrag"
 SRC_URI="
-	https://github.com/nik012003/ripdrag/archive/refs/tags/v${PV}.tar.gz
+	https://github.com/nik012003/ripdrag/archive/refs/tags/v${PV}.tar.gz -> ripdrag-${PV}.tar.gz
 	${CARGO_CRATE_URIS}
 "
 

@@ -17,20 +17,19 @@ CRATES="
 	anstyle-query@1.1.2
 	anstyle-wincon@3.0.6
 	anstyle@1.0.10
-	anyhow@1.0.93
+	anyhow@1.0.95
 	argon2@0.5.3
 	autocfg@1.4.0
 	base16ct@0.2.0
-	base64@0.21.7
+	base64@0.22.1
 	base64ct@1.6.0
 	bitfield@0.14.0
-	bitflags@1.3.2
 	bitflags@2.6.0
 	blake2@0.10.6
 	block-buffer@0.10.4
 	block-padding@0.3.3
 	blowfish@0.9.1
-	bstr@1.11.0
+	bstr@1.11.1
 	buffer-redux@1.0.2
 	bumpalo@3.16.0
 	byteorder@1.5.0
@@ -38,16 +37,16 @@ CRATES="
 	card-backend-pcsc@0.5.0
 	card-backend@0.2.0
 	cast5@0.11.1
-	cc@1.2.1
+	cc@1.2.5
 	cfb-mode@0.8.2
 	cfg-if@1.0.0
-	chrono@0.4.38
+	chrono@0.4.39
 	cipher@0.4.4
-	clap@4.5.21
-	clap_builder@4.5.21
-	clap_complete@4.5.38
+	clap@4.5.23
+	clap_builder@4.5.23
+	clap_complete@4.5.40
 	clap_derive@4.5.18
-	clap_lex@0.7.3
+	clap_lex@0.7.4
 	clap_mangen@0.2.24
 	cmac@0.7.2
 	colorchoice@1.0.3
@@ -87,10 +86,10 @@ CRATES="
 	ed25519@2.2.3
 	ed448-goldilocks@0.7.2
 	elliptic-curve@0.13.8
-	env_filter@0.1.2
-	env_logger@0.11.5
+	env_filter@0.1.3
+	env_logger@0.11.6
 	equivalent@1.0.1
-	errno@0.3.9
+	errno@0.3.10
 	ff@0.13.0
 	fiat-crypto@0.1.20
 	fiat-crypto@0.2.9
@@ -115,18 +114,18 @@ CRATES="
 	iana-time-zone@0.1.61
 	idea@0.5.1
 	ident_case@1.0.1
-	indexmap@2.6.0
+	indexmap@2.7.0
 	inout@0.1.3
 	is_terminal_polyfill@1.70.1
 	iso7816-tlv@0.4.4
 	iter-read@1.1.0
 	itoa@1.0.14
-	js-sys@0.3.72
+	js-sys@0.3.76
 	k256@0.13.4
 	keccak@0.1.5
 	keyring@3.6.1
 	lazy_static@1.5.0
-	libc@0.2.166
+	libc@0.2.169
 	libdbus-sys@0.2.5
 	libm@0.2.11
 	libredox@0.1.3
@@ -136,7 +135,7 @@ CRATES="
 	memchr@2.7.4
 	memsec@0.7.0
 	minimal-lexical@0.2.1
-	miniz_oxide@0.8.0
+	miniz_oxide@0.8.2
 	nom@7.1.3
 	num-bigint-dig@0.8.4
 	num-bigint@0.4.6
@@ -146,8 +145,8 @@ CRATES="
 	num-rational@0.4.2
 	num-traits@0.2.19
 	num@0.4.3
-	num_enum@0.5.11
-	num_enum_derive@0.5.11
+	num_enum@0.7.3
+	num_enum_derive@0.7.3
 	ocb3@0.1.0
 	once_cell@1.20.2
 	opaque-debug@0.3.1
@@ -159,10 +158,10 @@ CRATES="
 	p384@0.13.0
 	p521@0.13.3
 	password-hash@0.5.0
-	pcsc-sys@1.2.1
-	pcsc@2.8.2
+	pcsc-sys@1.3.0
+	pcsc@2.9.0
 	pem-rfc7468@0.7.0
-	pgp@0.14.0
+	pgp@0.14.2
 	pin-project-lite@0.2.15
 	pin-utils@0.1.0
 	pkcs1@0.7.5
@@ -171,7 +170,7 @@ CRATES="
 	polyval@0.6.2
 	ppv-lite86@0.2.20
 	primeorder@0.13.6
-	proc-macro-crate@1.3.1
+	proc-macro-crate@3.2.0
 	proc-macro2@1.0.92
 	quote@1.0.37
 	rand@0.8.5
@@ -186,21 +185,21 @@ CRATES="
 	ripemd@0.1.3
 	roff@0.2.2
 	rpassword@7.3.1
-	rpgpie@0.2.0
+	rpgpie@0.4.2
 	rsa@0.9.7
 	rtoolbox@0.0.2
 	rustc_version@0.4.1
-	rustix@0.38.41
+	rustix@0.38.42
 	ryu@1.0.18
 	sec1@0.7.3
 	secrecy@0.8.0
-	security-framework-sys@2.12.1
+	security-framework-sys@2.13.0
 	security-framework@2.11.1
-	security-framework@3.0.1
-	semver@1.0.23
-	serde@1.0.215
-	serde_derive@1.0.215
-	serde_json@1.0.133
+	security-framework@3.1.0
+	semver@1.0.24
+	serde@1.0.216
+	serde_derive@1.0.216
+	serde_json@1.0.134
 	serde_spanned@0.6.8
 	sha1-checked@0.10.0
 	sha1@0.10.6
@@ -215,14 +214,12 @@ CRATES="
 	spki@0.7.3
 	strsim@0.11.1
 	subtle@2.6.1
-	syn@1.0.109
-	syn@2.0.89
-	terminal_size@0.4.0
+	syn@2.0.91
+	terminal_size@0.4.1
 	thiserror-impl@1.0.69
 	thiserror@1.0.69
 	toml@0.8.19
 	toml_datetime@0.6.8
-	toml_edit@0.19.15
 	toml_edit@0.22.22
 	twofish@0.7.1
 	typenum@1.17.0
@@ -233,17 +230,16 @@ CRATES="
 	utf8parse@0.2.2
 	version_check@0.9.5
 	wasi@0.11.0+wasi-snapshot-preview1
-	wasm-bindgen-backend@0.2.95
-	wasm-bindgen-macro-support@0.2.95
-	wasm-bindgen-macro@0.2.95
-	wasm-bindgen-shared@0.2.95
-	wasm-bindgen@0.2.95
+	wasm-bindgen-backend@0.2.99
+	wasm-bindgen-macro-support@0.2.99
+	wasm-bindgen-macro@0.2.99
+	wasm-bindgen-shared@0.2.99
+	wasm-bindgen@0.2.99
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
 	windows-core@0.52.0
 	windows-sys@0.48.0
-	windows-sys@0.52.0
 	windows-sys@0.59.0
 	windows-targets@0.48.5
 	windows-targets@0.52.6
@@ -262,7 +258,6 @@ CRATES="
 	windows_x86_64_gnullvm@0.52.6
 	windows_x86_64_msvc@0.48.5
 	windows_x86_64_msvc@0.52.6
-	winnow@0.5.40
 	winnow@0.6.20
 	x25519-dalek@2.0.1
 	x448@0.6.0
@@ -274,10 +269,11 @@ CRATES="
 
 inherit cargo
 
-DESCRIPTION="SOP CLI tool based on rpgp and rpgpie"
+
 HOMEPAGE="https://codeberg.org/heiko/rsop"
+DESCRIPTION="Stateless OpenPGP (SOP) based on rpgp"
 SRC_URI="
-	https://codeberg.org/heiko/rsop/archive/rsop/v${PV}.tar.gz
+	https://codeberg.org/heiko/rsop/archive/rsop/v${PV}.tar.gz -> rsop-v${PV}.tar.gz
 	${CARGO_CRATE_URIS}
 "
 
@@ -305,6 +301,7 @@ src_install() {
 
 src_configure() {
 	local myfeatures=(
+		cli
 		$(usev cliv)
 	)
 

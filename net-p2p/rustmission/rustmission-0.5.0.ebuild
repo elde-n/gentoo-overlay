@@ -444,7 +444,7 @@ DEPEND="( net-p2p/transmission )"
 RDEPEND="${DEPEND}"
 
 SRC_URI="
-	https://github.com/intuis/rustmission/archive/refs/tags/v${PV}.tar.gz
+	https://github.com/intuis/rustmission/archive/refs/tags/v${PV}.tar.gz -> rustmission-${PV}.tar.gz
 	${CARGO_CRATE_URIS}
 "
 

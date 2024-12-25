@@ -9,7 +9,9 @@ inherit python-any-r1 cmake flag-o-matic
 HOMEPAGE="https://gemrb.org/"
 DESCRIPTION="Reimplementation of the Infinity engine"
 
-SRC_URI="https://github.com/gemrb/gemrb/archive/refs/tags/v${PV}.tar.gz"
+SRC_URI="
+	https://github.com/gemrb/gemrb/archive/refs/tags/v${PV}.tar.gz -> gemrb-${PV}.tar.gz
+"
 
 LICENSE="GPL-2"
 SLOT="0"

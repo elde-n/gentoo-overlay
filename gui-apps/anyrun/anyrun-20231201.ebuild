@@ -283,7 +283,7 @@ MY_EGIT_COMMIT="e14da6c37337ffa3ee1bc66965d58ef64c1590e5"
 HOMEPAGE="https://github.com/anyrun-org/anyrun"
 DESCRIPTION="A wayland native, highly customizable runner."
 SRC_URI="
-	https://github.com/Kirottu/anyrun/archive/${MY_EGIT_COMMIT}.tar.gz
+	https://github.com/Kirottu/anyrun/archive/${MY_EGIT_COMMIT}.tar.gz -> anyrun-${MY_EGIT_COMMIT}.tar.gz
 	${CARGO_CRATE_URIS}
 "
 

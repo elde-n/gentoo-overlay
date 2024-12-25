@@ -121,7 +121,7 @@ inherit cargo
 DESCRIPTION="Sway IPC daemon"
 HOMEPAGE="https://github.com/johnae/persway"
 SRC_URI="
-	https://github.com/johnae/persway/archive/refs/tags/${PV}.tar.gz
+	https://github.com/johnae/persway/archive/refs/tags/${PV}.tar.gz -> persway-${PV}.tar.gz
 	${CARGO_CRATE_URIS}
 "
 
