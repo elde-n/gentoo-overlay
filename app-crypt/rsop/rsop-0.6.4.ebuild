@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ CRATES="
 	anstream@0.6.18
 	anstyle-parse@0.2.6
 	anstyle-query@1.1.2
-	anstyle-wincon@3.0.6
+	anstyle-wincon@3.0.7
 	anstyle@1.0.10
 	anyhow@1.0.95
 	argon2@0.5.3
@@ -24,30 +24,31 @@ CRATES="
 	base64@0.22.1
 	base64ct@1.6.0
 	bitfield@0.14.0
-	bitflags@2.6.0
+	bitfield@0.17.0
+	bitflags@2.8.0
 	blake2@0.10.6
 	block-buffer@0.10.4
 	block-padding@0.3.3
 	blowfish@0.9.1
-	bstr@1.11.1
+	bstr@1.11.3
 	buffer-redux@1.0.2
-	bumpalo@3.16.0
+	bumpalo@3.17.0
 	byteorder@1.5.0
 	camellia@0.1.0
 	card-backend-pcsc@0.5.0
 	card-backend@0.2.0
 	cast5@0.11.1
-	cc@1.2.5
+	cc@1.2.13
 	cfb-mode@0.8.2
 	cfg-if@1.0.0
 	chrono@0.4.39
 	cipher@0.4.4
-	clap@4.5.23
-	clap_builder@4.5.23
-	clap_complete@4.5.40
-	clap_derive@4.5.18
+	clap@4.5.29
+	clap_builder@4.5.29
+	clap_complete@4.5.44
+	clap_derive@4.5.28
 	clap_lex@0.7.4
-	clap_mangen@0.2.24
+	clap_mangen@0.2.26
 	cmac@0.7.2
 	colorchoice@1.0.3
 	confy@0.6.1
@@ -55,7 +56,7 @@ CRATES="
 	core-foundation-sys@0.8.7
 	core-foundation@0.10.0
 	core-foundation@0.9.4
-	cpufeatures@0.2.16
+	cpufeatures@0.2.17
 	crc24@0.1.6
 	crc32fast@1.4.2
 	crypto-bigint@0.5.5
@@ -85,6 +86,7 @@ CRATES="
 	ed25519-dalek@2.1.1
 	ed25519@2.2.3
 	ed448-goldilocks@0.7.2
+	either@1.13.0
 	elliptic-curve@0.13.8
 	env_filter@0.1.3
 	env_logger@0.11.6
@@ -109,18 +111,19 @@ CRATES="
 	hex@0.4.3
 	hkdf@0.12.4
 	hmac@0.12.1
+	home@0.5.11
 	humantime@2.1.0
 	iana-time-zone-haiku@0.1.2
 	iana-time-zone@0.1.61
 	idea@0.5.1
 	ident_case@1.0.1
-	indexmap@2.7.0
+	indexmap@2.7.1
 	inout@0.1.3
 	is_terminal_polyfill@1.70.1
 	iso7816-tlv@0.4.4
 	iter-read@1.1.0
 	itoa@1.0.14
-	js-sys@0.3.76
+	js-sys@0.3.77
 	k256@0.13.4
 	keccak@0.1.5
 	keyring@3.6.1
@@ -129,13 +132,13 @@ CRATES="
 	libdbus-sys@0.2.5
 	libm@0.2.11
 	libredox@0.1.3
-	linux-raw-sys@0.4.14
-	log@0.4.22
+	linux-raw-sys@0.4.15
+	log@0.4.25
 	md-5@0.10.6
 	memchr@2.7.4
 	memsec@0.7.0
 	minimal-lexical@0.2.1
-	miniz_oxide@0.8.2
+	miniz_oxide@0.8.4
 	nom@7.1.3
 	num-bigint-dig@0.8.4
 	num-bigint@0.4.6
@@ -148,22 +151,25 @@ CRATES="
 	num_enum@0.7.3
 	num_enum_derive@0.7.3
 	ocb3@0.1.0
-	once_cell@1.20.2
+	once_cell@1.20.3
 	opaque-debug@0.3.1
 	openpgp-card-rpgp@0.2.0
-	openpgp-card-state@0.3.2
+	openpgp-card-state@0.3.3
 	openpgp-card@0.5.0
 	option-ext@0.2.0
 	p256@0.13.2
-	p384@0.13.0
+	p384@0.13.1
 	p521@0.13.3
 	password-hash@0.5.0
 	pcsc-sys@1.3.0
 	pcsc@2.9.0
 	pem-rfc7468@0.7.0
+	percent-encoding@2.3.1
 	pgp@0.14.2
-	pin-project-lite@0.2.15
+	pgp@0.15.0
+	pin-project-lite@0.2.16
 	pin-utils@0.1.0
+	pinentry@0.6.0
 	pkcs1@0.7.5
 	pkcs8@0.10.2
 	pkg-config@0.3.31
@@ -171,8 +177,8 @@ CRATES="
 	ppv-lite86@0.2.20
 	primeorder@0.13.6
 	proc-macro-crate@3.2.0
-	proc-macro2@1.0.92
-	quote@1.0.37
+	proc-macro2@1.0.93
+	quote@1.0.38
 	rand@0.8.5
 	rand_chacha@0.3.1
 	rand_core@0.5.1
@@ -185,21 +191,24 @@ CRATES="
 	ripemd@0.1.3
 	roff@0.2.2
 	rpassword@7.3.1
-	rpgpie@0.4.2
+	rpgpie@0.4.4
+	rpgpie@0.5.4
 	rsa@0.9.7
 	rtoolbox@0.0.2
 	rustc_version@0.4.1
-	rustix@0.38.42
-	ryu@1.0.18
+	rustix@0.38.44
+	rustversion@1.0.19
+	ryu@1.0.19
 	sec1@0.7.3
+	secrecy@0.10.3
 	secrecy@0.8.0
-	security-framework-sys@2.13.0
+	security-framework-sys@2.14.0
 	security-framework@2.11.1
-	security-framework@3.1.0
-	semver@1.0.24
-	serde@1.0.216
-	serde_derive@1.0.216
-	serde_json@1.0.134
+	security-framework@3.2.0
+	semver@1.0.25
+	serde@1.0.217
+	serde_derive@1.0.217
+	serde_json@1.0.138
 	serde_spanned@0.6.8
 	sha1-checked@0.10.0
 	sha1@0.10.6
@@ -209,32 +218,35 @@ CRATES="
 	signature@2.2.0
 	slab@0.4.9
 	smallvec@1.13.2
-	sop@0.8.0
+	sop@0.8.2
 	spin@0.9.8
 	spki@0.7.3
 	strsim@0.11.1
 	subtle@2.6.1
-	syn@2.0.91
+	syn@2.0.98
 	terminal_size@0.4.1
 	thiserror-impl@1.0.69
+	thiserror-impl@2.0.11
 	thiserror@1.0.69
-	toml@0.8.19
+	thiserror@2.0.11
+	toml@0.8.20
 	toml_datetime@0.6.8
-	toml_edit@0.22.22
+	toml_edit@0.22.24
 	twofish@0.7.1
 	typenum@1.17.0
-	unicode-ident@1.0.14
+	unicode-ident@1.0.16
 	unicode-xid@0.2.6
 	universal-hash@0.5.1
 	untrusted@0.9.0
 	utf8parse@0.2.2
 	version_check@0.9.5
 	wasi@0.11.0+wasi-snapshot-preview1
-	wasm-bindgen-backend@0.2.99
-	wasm-bindgen-macro-support@0.2.99
-	wasm-bindgen-macro@0.2.99
-	wasm-bindgen-shared@0.2.99
-	wasm-bindgen@0.2.99
+	wasm-bindgen-backend@0.2.100
+	wasm-bindgen-macro-support@0.2.100
+	wasm-bindgen-macro@0.2.100
+	wasm-bindgen-shared@0.2.100
+	wasm-bindgen@0.2.100
+	which@4.4.2
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
@@ -258,7 +270,7 @@ CRATES="
 	windows_x86_64_gnullvm@0.52.6
 	windows_x86_64_msvc@0.48.5
 	windows_x86_64_msvc@0.52.6
-	winnow@0.6.20
+	winnow@0.7.2
 	x25519-dalek@2.0.1
 	x448@0.6.0
 	zerocopy-derive@0.7.35
@@ -277,10 +289,7 @@ SRC_URI="
 	${CARGO_CRATE_URIS}
 "
 
-LICENSE="
-	CC0-1.0
-	|| ( Apache-2.0 MIT )
-"
+LICENSE="CC0-1.0"
 LICENSE+=" Apache-2.0 BSD ISC MIT MPL-2.0 Unicode-3.0"
 
 SLOT="0"

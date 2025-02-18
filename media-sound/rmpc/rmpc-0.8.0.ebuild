@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ CRATES="
 	anstyle-query@1.1.2
 	anstyle-wincon@3.0.6
 	anstyle@1.0.10
-	anyhow@1.0.94
+	anyhow@1.0.95
 	arbitrary@1.4.1
 	arg_enum_proc_macro@0.3.4
 	arrayvec@0.7.6
@@ -26,10 +26,10 @@ CRATES="
 	base64@0.22.1
 	bit_field@0.10.2
 	bitflags@1.3.2
-	bitflags@2.6.0
+	bitflags@2.8.0
 	bitstream-io@2.6.0
-	bon-macros@3.2.0
-	bon@3.2.0
+	bon-macros@3.3.2
+	bon@3.3.2
 	built@0.7.5
 	bumpalo@3.16.0
 	bytemuck@1.20.0
@@ -40,13 +40,13 @@ CRATES="
 	cc@1.2.2
 	cfg-expr@0.15.8
 	cfg-if@1.0.0
-	chrono@0.4.38
-	clap@4.5.23
-	clap_builder@4.5.23
-	clap_complete@4.5.38
-	clap_derive@4.5.18
+	chrono@0.4.39
+	clap@4.5.27
+	clap_builder@4.5.27
+	clap_complete@4.5.42
+	clap_derive@4.5.24
 	clap_lex@0.7.4
-	clap_mangen@0.2.24
+	clap_mangen@0.2.26
 	color_quant@1.1.0
 	colorchoice@1.0.3
 	compact_str@0.8.0
@@ -75,25 +75,21 @@ CRATES="
 	either@1.13.0
 	enum-map-derive@0.17.0
 	enum-map@2.7.3
+	env_home@0.1.0
 	equivalent@1.0.1
 	errno@0.3.10
 	exr@1.73.0
 	fdeflate@0.3.7
 	flate2@1.0.35
-	flexi_logger@0.29.6
+	flexi_logger@0.29.8
 	fnv@1.0.7
 	foldhash@0.1.3
 	form_urlencoded@1.2.1
-	futures-channel@0.3.31
 	futures-core@0.3.31
-	futures-executor@0.3.31
-	futures-io@0.3.31
 	futures-macro@0.3.31
-	futures-sink@0.3.31
 	futures-task@0.3.31
 	futures-timer@3.0.3
 	futures-util@0.3.31
-	futures@0.3.31
 	getrandom@0.2.15
 	gif@0.13.1
 	glob@0.3.1
@@ -102,7 +98,6 @@ CRATES="
 	hashbrown@0.15.2
 	heck@0.5.0
 	hex@0.4.3
-	home@0.5.9
 	iana-time-zone-haiku@0.1.2
 	iana-time-zone@0.1.61
 	icu_collections@1.5.0
@@ -129,6 +124,7 @@ CRATES="
 	is_terminal_polyfill@1.70.1
 	itertools@0.12.1
 	itertools@0.13.0
+	itertools@0.14.0
 	itoa@1.0.14
 	jobserver@0.1.32
 	jpeg-decoder@0.3.1
@@ -139,7 +135,7 @@ CRATES="
 	linux-raw-sys@0.4.14
 	litemap@0.7.4
 	lock_api@0.4.12
-	log@0.4.22
+	log@0.4.25
 	loop9@0.1.5
 	lru@0.12.5
 	maybe-rayon@0.1.1
@@ -195,21 +191,21 @@ CRATES="
 	rgb@0.8.50
 	roff@0.2.2
 	ron@0.8.1
-	rstest@0.23.0
-	rstest_macros@0.23.0
+	rstest@0.24.0
+	rstest_macros@0.24.0
 	rustc_version@0.4.1
-	rustix@0.38.41
-	rustversion@1.0.18
+	rustix@0.38.44
+	rustversion@1.0.19
 	ryu@1.0.18
 	same-file@1.0.6
 	scopeguard@1.2.0
 	semver@1.0.23
-	serde@1.0.215
-	serde_derive@1.0.215
-	serde_json@1.0.133
+	serde@1.0.217
+	serde_derive@1.0.217
+	serde_json@1.0.137
 	serde_spanned@0.6.8
-	serde_with@3.11.0
-	serde_with_macros@3.11.0
+	serde_with@3.12.0
+	serde_with_macros@3.12.0
 	shlex@1.3.0
 	signal-hook-mio@0.2.4
 	signal-hook-registry@1.4.2
@@ -226,7 +222,7 @@ CRATES="
 	strum_macros@0.26.4
 	syn@2.0.90
 	synstructure@0.13.1
-	sysinfo@0.32.1
+	sysinfo@0.33.1
 	system-deps@6.2.2
 	target-lexicon@0.12.16
 	test-case-core@3.3.1
@@ -234,7 +230,9 @@ CRATES="
 	test-case@3.3.1
 	textwrap@0.16.1
 	thiserror-impl@1.0.69
+	thiserror-impl@2.0.11
 	thiserror@1.0.69
+	thiserror@2.0.11
 	tiff@0.9.1
 	time-core@0.1.2
 	time-macros@0.2.19
@@ -255,9 +253,9 @@ CRATES="
 	utf8_iter@1.0.4
 	utf8parse@0.2.2
 	v_frame@0.3.8
-	vergen-gitcl@1.0.2
-	vergen-lib@0.1.5
-	vergen@9.0.2
+	vergen-gitcl@1.0.5
+	vergen-lib@0.1.6
+	vergen@9.0.4
 	version-compare@0.2.0
 	walkdir@2.5.0
 	wasi@0.11.0+wasi-snapshot-preview1
@@ -267,7 +265,7 @@ CRATES="
 	wasm-bindgen-shared@0.2.97
 	wasm-bindgen@0.2.97
 	weezl@0.1.8
-	which@6.0.3
+	which@7.0.1
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-util@0.1.9
 	winapi-x86_64-pc-windows-gnu@0.4.0
