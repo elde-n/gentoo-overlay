@@ -1,34 +1,35 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 CRATES="
 	addr2line@0.21.0
-	addr2line@0.22.0
+	addr2line@0.24.2
+	adler2@2.0.0
 	adler@1.0.2
 	ahash@0.8.11
 	ahash@0.8.6
 	aho-corasick@1.1.2
 	aho-corasick@1.1.3
 	allocator-api2@0.2.16
-	allocator-api2@0.2.18
+	allocator-api2@0.2.21
 	android-tzdata@0.1.1
 	android_system_properties@0.1.5
-	anstream@0.6.15
-	anstyle-parse@0.2.5
-	anstyle-query@1.1.1
-	anstyle-wincon@3.0.4
-	anstyle@1.0.8
+	anstream@0.6.18
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.6
+	anstyle@1.0.10
 	anyhow@1.0.76
-	anyhow@1.0.86
-	async-trait@0.1.81
-	atom_syndication@0.12.3
+	anyhow@1.0.95
+	async-trait@0.1.83
+	atom_syndication@0.12.6
 	atomic-waker@1.1.2
 	autocfg@1.1.0
-	autocfg@1.3.0
+	autocfg@1.4.0
 	backtrace@0.3.69
-	backtrace@0.3.73
+	backtrace@0.3.74
 	base64@0.21.5
 	base64@0.22.1
 	bitflags@1.3.2
@@ -38,23 +39,24 @@ CRATES="
 	bumpalo@3.16.0
 	byteorder@1.5.0
 	bytes@1.5.0
-	bytes@1.7.1
+	bytes@1.9.0
 	cassowary@0.3.0
 	castaway@0.2.2
 	castaway@0.2.3
 	cc@1.0.83
-	cc@1.1.14
+	cc@1.2.6
 	cfg-if@1.0.0
-	chrono@0.4.38
-	clap@4.5.16
-	clap_builder@4.5.15
-	clap_derive@4.5.13
-	clap_lex@0.7.2
+	cfg_aliases@0.2.1
+	chrono@0.4.39
+	clap@4.5.23
+	clap_builder@4.5.23
+	clap_derive@4.5.18
+	clap_lex@0.7.4
 	color-eyre@0.6.2
 	color-spantrace@0.2.1
-	colorchoice@1.0.2
+	colorchoice@1.0.3
 	compact_str@0.7.1
-	compact_str@0.8.0
+	compact_str@0.8.1
 	core-foundation-sys@0.8.6
 	core-foundation-sys@0.8.7
 	core-foundation@0.9.4
@@ -66,90 +68,108 @@ CRATES="
 	darling@0.20.10
 	darling_core@0.20.10
 	darling_macro@0.20.10
-	derive_builder@0.20.0
-	derive_builder_core@0.20.0
-	derive_builder_macro@0.20.0
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
 	derive_more@0.99.18
-	diligent-date-parser@0.1.4
+	diff@0.1.13
+	diligent-date-parser@0.1.5
 	directories@5.0.1
 	dirs-sys@0.4.1
+	displaydoc@0.2.5
 	dtoa-short@0.3.5
 	dtoa@1.0.9
 	ego-tree@0.6.3
 	either@1.13.0
 	either@1.9.0
 	encoding_rs@0.8.33
-	encoding_rs@0.8.34
+	encoding_rs@0.8.35
 	enum-iterator-derive@1.2.1
 	enum-iterator-derive@1.4.0
 	enum-iterator@1.4.1
 	enum-iterator@2.1.0
 	equivalent@1.0.1
-	errno@0.3.9
+	errno@0.3.10
 	eyre@0.6.11
-	fastrand@2.1.1
+	fastrand@2.3.0
 	fnv@1.0.7
+	foldhash@0.1.4
 	foreign-types-shared@0.1.1
 	foreign-types@0.3.2
 	form_urlencoded@1.2.1
 	futf@0.1.5
 	futures-channel@0.3.29
-	futures-channel@0.3.30
+	futures-channel@0.3.31
 	futures-core@0.3.29
-	futures-core@0.3.30
+	futures-core@0.3.31
 	futures-executor@0.3.29
-	futures-executor@0.3.30
+	futures-executor@0.3.31
 	futures-io@0.3.29
-	futures-io@0.3.30
+	futures-io@0.3.31
 	futures-macro@0.3.29
-	futures-macro@0.3.30
+	futures-macro@0.3.31
 	futures-sink@0.3.29
-	futures-sink@0.3.30
+	futures-sink@0.3.31
 	futures-task@0.3.29
-	futures-task@0.3.30
+	futures-task@0.3.31
 	futures-util@0.3.29
-	futures-util@0.3.30
+	futures-util@0.3.31
 	futures@0.3.29
-	futures@0.3.30
+	futures@0.3.31
 	fuzzy-matcher@0.3.7
 	fxhash@0.2.1
 	getopts@0.2.21
 	getrandom@0.2.11
 	getrandom@0.2.15
 	gimli@0.28.1
-	gimli@0.29.0
+	gimli@0.31.1
 	h2@0.3.22
-	h2@0.4.6
+	h2@0.4.7
 	hashbrown@0.14.3
-	hashbrown@0.14.5
+	hashbrown@0.15.2
 	heck@0.4.1
 	heck@0.5.0
 	hermit-abi@0.3.3
-	hermit-abi@0.3.9
 	html5ever@0.27.0
 	http-body-util@0.1.2
 	http-body@0.4.6
 	http-body@1.0.1
 	http@0.2.11
-	http@1.1.0
+	http@1.2.0
 	httparse@1.8.0
-	httparse@1.9.4
+	httparse@1.9.5
 	httpdate@1.0.3
 	hyper-rustls@0.24.2
-	hyper-rustls@0.27.2
+	hyper-rustls@0.27.5
 	hyper-tls@0.6.0
-	hyper-util@0.1.7
+	hyper-util@0.1.10
 	hyper@0.14.28
-	hyper@1.4.1
+	hyper@1.5.2
 	iana-time-zone-haiku@0.1.2
-	iana-time-zone@0.1.60
+	iana-time-zone@0.1.61
+	icu_collections@1.5.0
+	icu_locid@1.5.0
+	icu_locid_transform@1.5.0
+	icu_locid_transform_data@1.5.0
+	icu_normalizer@1.5.0
+	icu_normalizer_data@1.5.0
+	icu_properties@1.5.1
+	icu_properties_data@1.5.0
+	icu_provider@1.5.0
+	icu_provider_macros@1.5.0
 	ident_case@1.0.1
 	idna@0.5.0
+	idna@1.0.3
+	idna_adapter@1.2.0
 	indenter@0.3.3
 	indexmap@2.1.0
-	indexmap@2.4.0
+	indexmap@2.7.0
 	indoc@2.0.4
-	instability@0.3.2
+	indoc@2.0.5
+	instability@0.3.5
+	intui-tabs@0.3.0
+	intuitils@0.0.5
+	ipnet@2.10.1
 	ipnet@2.9.0
 	is-docker@0.2.0
 	is-wsl@0.4.0
@@ -157,31 +177,32 @@ CRATES="
 	itertools@0.12.0
 	itertools@0.13.0
 	itoa@1.0.10
-	itoa@1.0.11
+	itoa@1.0.14
 	js-sys@0.3.66
-	js-sys@0.3.70
+	js-sys@0.3.76
 	lazy_static@1.4.0
 	libc@0.2.151
-	libc@0.2.158
+	libc@0.2.169
 	libredox@0.0.1
 	linux-raw-sys@0.4.14
+	litemap@0.7.4
 	lock_api@0.4.11
 	lock_api@0.4.12
 	log@0.4.20
 	log@0.4.22
 	lru@0.12.1
-	lru@0.12.4
+	lru@0.12.5
 	mac@0.1.1
-	magnetease@0.3.0
+	magnetease@0.3.1
 	markup5ever@0.12.1
 	matchers@0.1.0
 	memchr@2.6.4
 	memchr@2.7.4
 	mime@0.3.17
 	miniz_oxide@0.7.1
-	miniz_oxide@0.7.4
+	miniz_oxide@0.8.2
 	mio@0.8.10
-	mio@1.0.2
+	mio@1.0.3
 	native-tls@0.2.12
 	never@0.1.0
 	new_debug_unreachable@1.0.6
@@ -189,13 +210,14 @@ CRATES="
 	num-traits@0.2.19
 	num_cpus@1.16.0
 	object@0.32.1
-	object@0.36.3
+	object@0.36.7
 	once_cell@1.19.0
-	open@5.3.0
+	once_cell@1.20.2
+	open@5.3.1
 	openssl-macros@0.1.1
 	openssl-probe@0.1.5
-	openssl-sys@0.9.103
-	openssl@0.10.66
+	openssl-sys@0.9.104
+	openssl@0.10.68
 	option-ext@0.2.0
 	overload@0.1.1
 	owo-colors@3.5.0
@@ -205,7 +227,7 @@ CRATES="
 	parking_lot_core@0.9.9
 	paste@1.0.14
 	paste@1.0.15
-	pathdiff@0.2.1
+	pathdiff@0.2.3
 	percent-encoding@2.3.1
 	phf@0.10.1
 	phf@0.11.2
@@ -216,74 +238,73 @@ CRATES="
 	phf_macros@0.11.2
 	phf_shared@0.10.0
 	phf_shared@0.11.2
-	pin-project-internal@1.1.5
 	pin-project-lite@0.2.13
-	pin-project-lite@0.2.14
-	pin-project@1.1.5
+	pin-project-lite@0.2.15
 	pin-utils@0.1.0
-	pkg-config@0.3.30
+	pkg-config@0.3.31
 	ppv-lite86@0.2.20
 	precomputed-hash@0.1.1
+	pretty_assertions@1.4.1
 	proc-macro2@1.0.71
-	proc-macro2@1.0.86
-	quick-xml@0.31.0
-	quinn-proto@0.11.6
-	quinn-udp@0.5.4
-	quinn@0.11.3
+	proc-macro2@1.0.92
+	quick-xml@0.37.2
+	quinn-proto@0.11.9
+	quinn-udp@0.5.9
+	quinn@0.11.6
 	quote@1.0.33
-	quote@1.0.37
+	quote@1.0.38
 	rand@0.8.5
 	rand_chacha@0.3.1
 	rand_core@0.6.4
 	ratatui@0.26.0
-	ratatui@0.28.1
+	ratatui@0.29.0
 	redox_syscall@0.4.1
-	redox_syscall@0.5.3
+	redox_syscall@0.5.8
 	redox_users@0.4.4
 	regex-automata@0.1.10
 	regex-automata@0.4.3
-	regex-automata@0.4.7
+	regex-automata@0.4.9
 	regex-syntax@0.6.29
 	regex-syntax@0.8.2
-	regex-syntax@0.8.4
+	regex-syntax@0.8.5
 	regex@1.10.2
-	regex@1.10.6
+	regex@1.11.1
 	reqwest@0.11.23
-	reqwest@0.12.7
+	reqwest@0.12.12
 	ring@0.17.7
 	ring@0.17.8
-	rss@2.0.8
+	rss@2.0.11
 	rustc-demangle@0.1.23
 	rustc-demangle@0.1.24
-	rustc-hash@2.0.0
-	rustix@0.38.34
+	rustc-hash@2.1.0
+	rustix@0.38.42
 	rustls-pemfile@1.0.4
-	rustls-pemfile@2.1.3
-	rustls-pki-types@1.8.0
+	rustls-pemfile@2.2.0
+	rustls-pki-types@1.10.1
 	rustls-webpki@0.101.7
-	rustls-webpki@0.102.6
+	rustls-webpki@0.102.8
 	rustls@0.21.10
-	rustls@0.23.12
+	rustls@0.23.20
 	rustversion@1.0.14
-	rustversion@1.0.17
+	rustversion@1.0.19
 	ryu@1.0.16
 	ryu@1.0.18
-	schannel@0.1.23
+	schannel@0.1.27
 	scopeguard@1.2.0
 	scraper@0.20.0
 	sct@0.7.1
-	security-framework-sys@2.11.1
+	security-framework-sys@2.13.0
 	security-framework@2.11.1
 	selectors@0.25.0
 	serde@1.0.193
-	serde@1.0.209
+	serde@1.0.217
 	serde_derive@1.0.193
-	serde_derive@1.0.209
+	serde_derive@1.0.217
 	serde_json@1.0.108
-	serde_json@1.0.127
+	serde_json@1.0.134
 	serde_repr@0.1.17
 	serde_repr@0.1.19
-	serde_spanned@0.6.7
+	serde_spanned@0.6.8
 	serde_urlencoded@0.7.1
 	servo_arc@0.3.0
 	sharded-slab@0.1.7
@@ -298,7 +319,7 @@ CRATES="
 	smallvec@1.11.2
 	smallvec@1.13.2
 	socket2@0.5.5
-	socket2@0.5.7
+	socket2@0.5.8
 	spin@0.9.8
 	stability@0.1.1
 	stable_deref_trait@1.2.0
@@ -313,65 +334,73 @@ CRATES="
 	subtle@2.6.1
 	syn@1.0.109
 	syn@2.0.42
-	syn@2.0.76
-	sync_wrapper@1.0.1
+	syn@2.0.94
+	sync_wrapper@1.0.2
+	synstructure@0.13.1
 	system-configuration-sys@0.5.0
 	system-configuration-sys@0.6.0
 	system-configuration@0.5.1
 	system-configuration@0.6.1
-	tempfile@3.12.0
+	tempfile@3.14.0
 	tendril@0.4.3
 	thiserror-impl@1.0.51
-	thiserror-impl@1.0.63
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.9
 	thiserror@1.0.51
-	thiserror@1.0.63
+	thiserror@1.0.69
+	thiserror@2.0.9
 	thread_local@1.1.7
 	thread_local@1.1.8
-	throbber-widgets-tui@0.7.0
+	throbber-widgets-tui@0.8.0
+	tinystr@0.7.6
 	tinyvec@1.6.0
-	tinyvec@1.8.0
+	tinyvec@1.8.1
 	tinyvec_macros@0.1.1
 	tokio-macros@2.2.0
 	tokio-macros@2.4.0
 	tokio-native-tls@0.3.1
 	tokio-rustls@0.24.1
-	tokio-rustls@0.26.0
+	tokio-rustls@0.26.1
 	tokio-util@0.7.10
-	tokio-util@0.7.11
+	tokio-util@0.7.13
 	tokio@1.35.1
-	tokio@1.39.3
+	tokio@1.42.0
 	toml@0.8.19
 	toml_datetime@0.6.8
-	toml_edit@0.22.20
+	toml_edit@0.22.22
 	tower-layer@0.3.3
 	tower-service@0.3.2
 	tower-service@0.3.3
-	tower@0.4.13
+	tower@0.5.2
 	tracing-attributes@0.1.27
 	tracing-core@0.1.32
+	tracing-core@0.1.33
 	tracing-error@0.2.0
 	tracing-log@0.2.0
 	tracing-subscriber@0.3.18
 	tracing@0.1.40
+	tracing@0.1.41
 	transmission-rpc@0.4.2
 	transmission-rpc@0.4.3
 	try-lock@0.2.5
-	tui-input@0.10.1
-	tui-tree-widget@0.22.0
+	tui-input@0.11.1
+	tui-tree-widget@0.23.0
 	unicode-bidi@0.3.14
-	unicode-bidi@0.3.15
 	unicode-ident@1.0.12
+	unicode-ident@1.0.14
 	unicode-normalization@0.1.22
-	unicode-normalization@0.1.23
 	unicode-segmentation@1.10.1
-	unicode-segmentation@1.11.0
+	unicode-segmentation@1.12.0
 	unicode-truncate@1.1.0
 	unicode-width@0.1.11
-	unicode-width@0.1.13
+	unicode-width@0.1.14
+	unicode-width@0.2.0
 	untrusted@0.9.0
 	url@2.5.0
-	url@2.5.2
+	url@2.5.4
 	utf-8@0.7.6
+	utf16_iter@1.0.5
+	utf8_iter@1.0.4
 	utf8parse@0.2.2
 	valuable@0.1.0
 	vcpkg@0.2.15
@@ -380,21 +409,22 @@ CRATES="
 	want@0.3.1
 	wasi@0.11.0+wasi-snapshot-preview1
 	wasm-bindgen-backend@0.2.89
-	wasm-bindgen-backend@0.2.93
+	wasm-bindgen-backend@0.2.99
 	wasm-bindgen-futures@0.4.39
-	wasm-bindgen-futures@0.4.43
+	wasm-bindgen-futures@0.4.49
 	wasm-bindgen-macro-support@0.2.89
-	wasm-bindgen-macro-support@0.2.93
+	wasm-bindgen-macro-support@0.2.99
 	wasm-bindgen-macro@0.2.89
-	wasm-bindgen-macro@0.2.93
+	wasm-bindgen-macro@0.2.99
 	wasm-bindgen-shared@0.2.89
-	wasm-bindgen-shared@0.2.93
+	wasm-bindgen-shared@0.2.99
 	wasm-bindgen@0.2.89
-	wasm-bindgen@0.2.93
+	wasm-bindgen@0.2.99
 	web-sys@0.3.66
-	web-sys@0.3.70
+	web-sys@0.3.76
+	web-time@1.1.0
 	webpki-roots@0.25.3
-	webpki-roots@0.26.3
+	webpki-roots@0.26.7
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
@@ -422,14 +452,23 @@ CRATES="
 	windows_x86_64_gnullvm@0.52.6
 	windows_x86_64_msvc@0.48.5
 	windows_x86_64_msvc@0.52.6
-	winnow@0.6.18
+	winnow@0.6.21
 	winreg@0.50.0
+	write16@1.0.0
+	writeable@0.5.5
 	xdg@2.5.2
+	yansi@1.0.1
+	yoke-derive@0.7.5
+	yoke@0.7.5
 	zerocopy-derive@0.7.32
 	zerocopy-derive@0.7.35
 	zerocopy@0.7.32
 	zerocopy@0.7.35
+	zerofrom-derive@0.1.5
+	zerofrom@0.1.5
 	zeroize@1.8.1
+	zerovec-derive@0.10.3
+	zerovec@0.10.4
 "
 
 inherit cargo
@@ -448,10 +487,11 @@ SRC_URI="
 	${CARGO_CRATE_URIS}
 "
 
-# TODO: probably missing a license for 'ring' crate
 LICENSE="GPL-3+"
+# Dependent crate licenses
 LICENSE+="
-	0BSD Apache-2.0 BSD GPL-3+ ISC MIT MPL-2.0 Unicode-DFS-2016 ZLIB
+	0BSD Apache-2.0 BSD GPL-3+ ISC MIT MPL-2.0 Unicode-3.0
+	Unicode-DFS-2016 ZLIB
 "
 
 SLOT="0"
