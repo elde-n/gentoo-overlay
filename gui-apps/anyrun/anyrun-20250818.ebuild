@@ -11,6 +11,8 @@ CRATES="
 	adler@1.0.2
 	ahash@0.8.11
 	aho-corasick@1.0.4
+	alloc-no-stdlib@2.0.4
+	alloc-stdlib@0.2.2
 	android-tzdata@0.1.1
 	android_system_properties@0.1.5
 	anstream@0.3.2
@@ -20,6 +22,7 @@ CRATES="
 	anstyle@1.0.1
 	anyhow@1.0.75
 	as_derive_utils@0.11.0
+	async-compression@0.4.27
 	async-stream-impl@0.3.6
 	async-stream@0.3.6
 	atk-sys@0.16.0
@@ -27,10 +30,13 @@ CRATES="
 	autocfg@1.1.0
 	backtrace@0.3.68
 	base64@0.21.2
+	base64@0.22.1
 	bitflags@1.3.2
 	bitflags@2.4.0
+	brotli-decompressor@5.0.0
+	brotli@8.0.1
 	bumpalo@3.13.0
-	bytes@1.4.0
+	bytes@1.10.1
 	cairo-rs@0.16.7
 	cairo-sys-rs@0.16.3
 	cc@1.1.31
@@ -46,7 +52,7 @@ CRATES="
 	clap_lex@0.5.0
 	colorchoice@1.0.0
 	const_panic@0.2.8
-	core-foundation-sys@0.8.4
+	core-foundation-sys@0.8.7
 	core_extensions@1.5.3
 	core_extensions_proc_macros@1.5.3
 	crossbeam-channel@0.5.8
@@ -98,12 +104,18 @@ CRATES="
 	heck@0.4.1
 	hermit-abi@0.3.2
 	home@0.5.9
+	http-body-util@0.1.3
 	http-body@0.4.5
+	http-body@1.0.1
 	http@0.2.9
-	httparse@1.8.0
+	http@1.3.1
+	httparse@1.10.1
 	httpdate@1.0.3
 	hyper-rustls@0.24.1
+	hyper-rustls@0.27.7
+	hyper-util@0.1.16
 	hyper@0.14.27
+	hyper@1.6.0
 	hyprland-macros@0.4.0-beta.1
 	hyprland@0.4.0-beta.1
 	iana-time-zone-haiku@0.1.2
@@ -111,12 +123,13 @@ CRATES="
 	idna@0.4.0
 	indexmap@1.9.3
 	indexmap@2.0.0
-	ipnet@2.8.0
+	ipnet@2.11.0
+	iri-string@0.7.8
 	is-terminal@0.4.9
 	itoa@1.0.9
-	js-sys@0.3.64
+	js-sys@0.3.77
 	kidex-common@0.1.0
-	libc@0.2.159
+	libc@0.2.175
 	libloading@0.7.4
 	linux-raw-sys@0.4.14
 	lock_api@0.4.10
@@ -127,6 +140,7 @@ CRATES="
 	minimal-lexical@0.2.1
 	miniz_oxide@0.7.1
 	mio@0.8.11
+	niri-ipc@25.5.1
 	nix@0.29.0
 	nom@7.1.3
 	num-bigint@0.4.3
@@ -157,13 +171,18 @@ CRATES="
 	pin-project-lite@0.2.12
 	pin-utils@0.1.0
 	pkg-config@0.3.27
+	ppv-lite86@0.2.21
 	proc-macro-crate@1.3.1
 	proc-macro-error-attr@1.0.4
 	proc-macro-error@1.0.4
 	proc-macro2@1.0.87
 	quick-xml@0.36.2
+	quinn-proto@0.11.8
+	quinn-udp@0.5.13
+	quinn@0.11.5
 	quote@1.0.37
 	rand@0.8.5
+	rand_chacha@0.3.1
 	rand_core@0.6.4
 	redox_syscall@0.3.5
 	regex-automata@0.3.6
@@ -171,42 +190,51 @@ CRATES="
 	regex@1.9.3
 	repr_offset@0.2.2
 	reqwest@0.11.18
+	reqwest@0.12.23
 	ring@0.16.20
 	ring@0.17.8
 	rink-core@0.6.2
+	ron@0.10.1
 	ron@0.8.1
 	rustc-demangle@0.1.23
+	rustc-hash@2.1.1
 	rustc_version@0.4.0
 	rustix@0.38.37
 	rustls-pemfile@1.0.3
+	rustls-pki-types@1.12.0
 	rustls-webpki@0.101.7
+	rustls-webpki@0.103.4
 	rustls@0.21.12
+	rustls@0.23.31
 	rustversion@1.0.14
 	ryu@1.0.15
 	scoped-tls@1.0.1
 	scopeguard@1.2.0
 	sct@0.7.0
 	semver@1.0.18
-	serde@1.0.210
-	serde_derive@1.0.210
-	serde_json@1.0.105
+	serde@1.0.219
+	serde_derive@1.0.219
+	serde_json@1.0.142
 	serde_repr@0.1.16
 	serde_spanned@0.6.3
 	serde_urlencoded@0.7.1
 	shlex@1.3.0
 	siphasher@0.3.11
 	slab@0.4.8
-	smallvec@1.11.0
+	smallvec@1.15.1
 	socket2@0.4.9
 	socket2@0.5.3
+	socket2@0.6.0
 	spin@0.5.2
 	spin@0.9.8
 	strsim@0.10.0
 	strum@0.25.0
 	strum_macros@0.25.2
 	sublime_fuzzy@0.7.0
+	subtle@2.6.1
 	syn@1.0.109
 	syn@2.0.85
+	sync_wrapper@1.0.2
 	system-deps@6.1.1
 	target-lexicon@0.12.11
 	tempfile@3.13.0
@@ -217,12 +245,16 @@ CRATES="
 	tinyvec_macros@0.1.1
 	tokio-macros@2.1.0
 	tokio-rustls@0.24.1
-	tokio-util@0.7.8
+	tokio-rustls@0.26.2
+	tokio-util@0.7.16
 	tokio@1.32.0
 	toml@0.7.6
 	toml_datetime@0.6.3
 	toml_edit@0.19.14
-	tower-service@0.3.2
+	tower-http@0.6.6
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.2
 	tracing-core@0.1.31
 	tracing@0.1.37
 	tree_magic_mini@3.1.5
@@ -242,12 +274,12 @@ CRATES="
 	version_check@0.9.4
 	want@0.3.1
 	wasi@0.11.0+wasi-snapshot-preview1
-	wasm-bindgen-backend@0.2.87
+	wasm-bindgen-backend@0.2.100
 	wasm-bindgen-futures@0.4.37
-	wasm-bindgen-macro-support@0.2.87
-	wasm-bindgen-macro@0.2.87
-	wasm-bindgen-shared@0.2.87
-	wasm-bindgen@0.2.87
+	wasm-bindgen-macro-support@0.2.100
+	wasm-bindgen-macro@0.2.100
+	wasm-bindgen-shared@0.2.100
+	wasm-bindgen@0.2.100
 	wayland-backend@0.3.7
 	wayland-client@0.31.6
 	wayland-protocols-wlr@0.3.4
@@ -256,6 +288,7 @@ CRATES="
 	wayland-sys@0.31.5
 	web-sys@0.3.64
 	webpki-roots@0.22.6
+	webpki-roots@1.0.2
 	webpki@0.22.4
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-x86_64-pc-windows-gnu@0.4.0
@@ -293,13 +326,16 @@ CRATES="
 	winreg@0.10.1
 	wl-clipboard-rs@0.9.1
 	zerocopy-derive@0.7.35
+	zerocopy-derive@0.8.26
 	zerocopy@0.7.35
+	zerocopy@0.8.26
+	zeroize@1.8.1
 "
 
 
 inherit cargo
 
-MY_EGIT_COMMIT="786f539d69d5abcefa68978dbaa964ac14536a00"
+MY_EGIT_COMMIT="bed987ed5dec0b29865b973ad4fce04c5da2ea21"
 
 HOMEPAGE="https://github.com/anyrun-org/anyrun"
 DESCRIPTION="A wayland native, highly customizable runner."
@@ -313,9 +349,8 @@ S="${WORKDIR}/${PN}-$MY_EGIT_COMMIT"
 LICENSE=""
 # Dependent crate licenses
 LICENSE+="
-	Apache-2.0-with-LLVM-exceptions BSD GPL-3 GPL-3+ ISC MIT MPL-2.0
-	Unicode-DFS-2016 ZLIB
-	|| ( Apache-2.0 Boost-1.0 )
+	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD CDLA-Permissive-2.0
+	GPL-3 GPL-3+ ISC MIT MPL-2.0 Unicode-DFS-2016 ZLIB
 "
 
 SLOT="0"
@@ -330,7 +365,7 @@ DEPEND="
 	x11-libs/cairo
 "
 RDEPEND="${DEPEND}"
-IUSE="+applications +symbols +rink +shell +translate +kidex +randr +stdin +dictionary +websearch"
+IUSE="+applications +symbols +rink +shell +translate +kidex +randr +stdin +dictionary +websearch nirifocus nixrun"
 
 
 src_install() {
@@ -377,6 +412,14 @@ src_install() {
 
 	if use websearch; then
 		enabled_plugins+=("websearch")
+	fi
+
+	if use nixrun; then
+		enabled_plugins+=("nix_run")
+	fi
+
+	if use nirifocus; then
+		enabled_plugins+=("niri_focus")
 	fi
 
 	for plugin in "${enabled_plugins[@]}"; do
